@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We craft minimum viable SaaS products</title>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS for utility-first responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            lime: '#a3ff33', // Exact neon lime/green from image_3a3124.png
+                            dark: '#09090b',
+                            muted: '#71717a',
+                            lightBg: '#fafafa',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom smooth scroll and typography tweaks */
+        body {
+            background-color: #fafafa;
+            color: #09090b;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .text-display {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Custom highlight matches the underline effect under 'SaaS' in image_3a3124.png */
+        .underline-highlight {
+            position: relative;
+            z-index: 1;
+        }
+        .underline-highlight::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 4px;
+            width: 100%;
+            height: 6px;
+            background-color: #a3ff33;
+            z-index: -1;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navigation Bar (Replicating header layout from image_3a3124.png) -->
+    <header class="fixed top-0 left-0 w-full bg-[#fafafa]/80 backdrop-blur-md z-40 border-b border-zinc-100 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo (Replicating the iconic loop symbol in image_3a3124.png) -->
+            <a href="#" class="flex items-center space-x-2 focus:outline-none" aria-label="Home">
+                <svg class="w-8 h-8 text-black" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="15" />
+                    <path d="M50 20 C 65 20, 80 35, 80 50 C 80 65, 65 80, 50 80 C 40 80, 30 75, 20 65" stroke="currentColor" stroke-width="15" stroke-linecap="round"/>
+                    <circle cx="30" cy="60" r="10" fill="currentColor"/>
+                </svg>
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#process" class="text-sm font-medium text-brand-muted hover:text-black transition-colors">Process</a>
+                <a href="#projects" class="text-sm font-medium text-brand-muted hover:text-black transition-colors">Projects</a>
+                <a href="#faq" class="text-sm font-medium text-brand-muted hover:text-black transition-colors">FAQ</a>
+                <a href="#packages" class="text-sm font-medium px-4 py-2 border border-zinc-200 rounded-full hover:border-black transition-all hover:bg-white">
+                    Packages
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-zinc-600 hover:text-black focus:outline-none" aria-label="Toggle Menu">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-zinc-200 px-6 py-6 space-y-4 absolute top-20 left-0 w-full transition-all duration-300 shadow-lg">
+            <a href="#process" class="block text-base font-medium text-brand-muted hover:text-black transition-colors py-2">Process</a>
+            <a href="#projects" class="block text-base font-medium text-brand-muted hover:text-black transition-colors py-2">Projects</a>
+            <a href="#faq" class="block text-base font-medium text-brand-muted hover:text-black transition-colors py-2">FAQ</a>
+            <a href="#packages" class="inline-block w-full text-center text-base font-medium px-4 py-3 border border-zinc-200 rounded-full hover:bg-zinc-50 transition-all">
+                Packages
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section (Direct match of image_3a3124.png layout & spacing) -->
+    <main class="pt-32 pb-24 md:pt-40 md:pb-36 px-6">
+        <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+            
+            <!-- Main Headline -->
+            <h1 class="text-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-brand-dark leading-[1.15] max-w-3xl mb-8">
+                We craft minimum viable <span class="underline-highlight">SaaS</span> products
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-zinc-500 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed mb-10">
+                Helping founders bring their product to life, attract early users, and validate their idea.
+            </p>
+
+            <!-- Bright neon lime Call to Action button -->
+            <a href="#packages" class="inline-flex items-center justify-center px-8 py-4 bg-[#a3ff33] text-black font-semibold rounded-2xl hover:bg-[#92eb27] active:scale-95 transition-all shadow-md shadow-brand-lime/10 mb-20 md:mb-28 text-sm md:text-base">
+                See packages
+            </a>
+
+            <!-- Partners Logo Row (Crisp reproduction of logos: Estin, status, CardChef, haste, Market.) -->
+            <div class="w-full">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center opacity-85 hover:opacity-100 transition-opacity">
+                    
+                    <!-- Estin Logo -->
+                    <div class="flex items-center space-x-2 text-black hover:scale-105 transition-transform duration-200">
+                        <svg class="w-5 h-5 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            <path d="M2 12h20"></path>
+                        </svg>
+                        <span class="font-bold text-lg tracking-tight">Estin</span>
+                    </div>
+
+                    <!-- status Logo -->
+                    <div class="flex items-center space-x-2 text-black hover:scale-105 transition-transform duration-200">
+                        <span class="flex space-x-1">
+                            <span class="w-1.5 h-1.5 bg-black rounded-full"></span>
+                            <span class="w-1.5 h-1.5 bg-black rounded-full"></span>
+                            <span class="w-1.5 h-1.5 bg-black rounded-full"></span>
+                        </span>
+                        <span class="font-bold text-lg tracking-tight">status</span>
+                    </div>
+
+                    <!-- CardChef Logo -->
+                    <div class="flex items-center space-x-1 text-black hover:scale-105 transition-transform duration-200">
+                        <span class="font-semibold text-lg tracking-tight">CardChef</span>
+                    </div>
+
+                    <!-- haste Logo -->
+                    <div class="flex items-center space-x-1.5 text-black hover:scale-105 transition-transform duration-200">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                        </svg>
+                        <span class="font-bold text-lg tracking-tight italic">haste</span>
+                    </div>
+
+                    <!-- Market. Logo -->
+                    <div class="flex items-center text-black hover:scale-105 transition-transform duration-200 col-span-2 sm:col-span-1">
+                        <span class="font-extrabold text-xl tracking-tight">Market<span class="text-[#a3ff33]">.</span></span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- PROCESS SECTION -->
+    <section id="process" class="py-24 bg-white border-t border-b border-zinc-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-wider text-zinc-400 font-semibold bg-zinc-50 px-3 py-1 rounded-full">Our Blueprint</span>
+                <h2 class="text-display text-3xl md:text-4xl font-extrabold tracking-tight mt-3 mb-4">How we launch in 4 steps</h2>
+                <p class="text-zinc-500">We streamlined the agency bloat. No useless meetings, just pure execution to validate your vision quickly.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="relative group p-6 rounded-2xl bg-zinc-50 hover:bg-zinc-100/70 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center font-bold text-base mb-6 group-hover:bg-[#a3ff33] group-hover:text-black transition-colors duration-300">
+                        1
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Scope & Design</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed">We map out the core features and wireframe your product's user flow in Figma within days.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative group p-6 rounded-2xl bg-zinc-50 hover:bg-zinc-100/70 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center font-bold text-base mb-6 group-hover:bg-[#a3ff33] group-hover:text-black transition-colors duration-300">
+                        2
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Build & Iterate</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed">Our senior stack developers build a production-grade, highly performant front-and-backend architecture.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative group p-6 rounded-2xl bg-zinc-50 hover:bg-zinc-100/70 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center font-bold text-base mb-6 group-hover:bg-[#a3ff33] group-hover:text-black transition-colors duration-300">
+                        3
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Polishing & QA</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed">Rigorous testing on multiple responsive resolutions, edge-case optimization, and speed tuning.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative group p-6 rounded-2xl bg-zinc-50 hover:bg-zinc-100/70 transition-all duration-300">
+                    <div class="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center font-bold text-base mb-6 group-hover:bg-[#a3ff33] group-hover:text-black transition-colors duration-300">
+                        4
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Launch Day</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed">Deploy to cloud production, handover clean code repository, and configure analytical tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-24 bg-[#fafafa]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
+                <div>
+                    <span class="text-xs uppercase tracking-wider text-zinc-400 font-semibold bg-zinc-100 px-3 py-1 rounded-full">Recent Deliveries</span>
+                    <h2 class="text-display text-3xl md:text-4xl font-extrabold tracking-tight mt-3 mb-2">Products in active scale</h2>
+                    <p class="text-zinc-500 max-w-md">Take a look at real-world products built, refined, and launched by us within 4-6 weeks.</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex space-x-2">
+                    <button id="filter-all" class="filter-btn px-4 py-2 bg-black text-white text-xs font-semibold rounded-full transition-all">All MVPs</button>
+                    <button id="filter-fintech" class="filter-btn px-4 py-2 bg-white text-zinc-600 hover:text-black border border-zinc-200 text-xs font-semibold rounded-full transition-all">Fintech</button>
+                    <button id="filter-devtool" class="filter-btn px-4 py-2 bg-white text-zinc-600 hover:text-black border border-zinc-200 text-xs font-semibold rounded-full transition-all">DevTools</button>
+                </div>
+            </div>
+
+            <!-- Case Study Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Project: Estin -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden border border-zinc-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" data-category="fintech">
+                    <div class="h-48 bg-zinc-950 flex items-center justify-center relative p-6">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-[#a3ff33]/10 to-transparent"></div>
+                        <div class="flex items-center space-x-2 text-white z-10">
+                            <svg class="w-8 h-8 text-[#a3ff33]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            <span class="font-bold text-2xl tracking-tight">Estin</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <span class="text-[10px] font-bold tracking-wider uppercase bg-[#a3ff33]/20 text-black px-2 py-0.5 rounded-full">Fintech</span>
+                            <span class="text-xs text-zinc-400">4 weeks dev time</span>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2 text-brand-dark">Decentralized asset management</h4>
+                        <p class="text-zinc-500 text-sm leading-relaxed mb-4">A complete Web3 analytical dashboard featuring zero gas automated indexing and smart portfolio balancing.</p>
+                        <a href="#" class="inline-flex items-center text-sm font-semibold text-black group hover:underline">
+                            View Live MVP
+                            <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project: status -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden border border-zinc-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" data-category="devtool">
+                    <div class="h-48 bg-zinc-900 flex items-center justify-center relative p-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-transparent"></div>
+                        <div class="flex items-center space-x-2 text-white z-10">
+                            <span class="flex space-x-1">
+                                <span class="w-2.5 h-2.5 bg-[#a3ff33] rounded-full"></span>
+                                <span class="w-2.5 h-2.5 bg-white rounded-full"></span>
+                                <span class="w-2.5 h-2.5 bg-white rounded-full"></span>
+                            </span>
+                            <span class="font-bold text-2xl tracking-tight">status</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <span class="text-[10px] font-bold tracking-wider uppercase bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded-full">DevTools</span>
+                            <span class="text-xs text-zinc-400">5 weeks dev time</span>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2 text-brand-dark">Instant infrastructure analytics</h4>
+                        <p class="text-zinc-500 text-sm leading-relaxed mb-4">A lightning-fast health check API monitor delivering status updates via customizable embeds and Webhooks.</p>
+                        <a href="#" class="inline-flex items-center text-sm font-semibold text-black group hover:underline">
+                            View Live MVP
+                            <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project: haste -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden border border-zinc-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" data-category="fintech">
+                    <div class="h-48 bg-[#09090b] flex items-center justify-center relative p-6">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-cyan-400/10 to-transparent"></div>
+                        <div class="flex items-center space-x-2 text-white z-10">
+                            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                            </svg>
+                            <span class="font-bold text-2xl tracking-tight italic">haste</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <span class="text-[10px] font-bold tracking-wider uppercase bg-[#a3ff33]/20 text-black px-2 py-0.5 rounded-full">Fintech</span>
+                            <span class="text-xs text-zinc-400">6 weeks dev time</span>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2 text-brand-dark">Automated lightning invoices</h4>
+                        <p class="text-zinc-500 text-sm leading-relaxed mb-4">Enabling global micro-payment billing architecture over Stripe and regional lightning network infrastructure.</p>
+                        <a href="#" class="inline-flex items-center text-sm font-semibold text-black group hover:underline">
+                            View Live MVP
+                            <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING/PACKAGES SECTION -->
+    <section id="packages" class="py-24 bg-white border-t border-b border-zinc-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-wider text-zinc-400 font-semibold bg-zinc-50 px-3 py-1 rounded-full">Fair Pricing</span>
+                <h2 class="text-display text-3xl md:text-4xl font-extrabold tracking-tight mt-3 mb-4">Predictable pricing packages</h2>
+                <p class="text-zinc-500 mb-6">Simple flat-rate contracts for fast validation. Select your product scope below.</p>
+                
+                <!-- Billing Duration Toggle -->
+                <div class="inline-flex bg-zinc-100 p-1.5 rounded-full mb-8">
+                    <button id="toggle-monthly" class="px-5 py-2 text-xs font-semibold rounded-full bg-white text-black shadow-sm transition-all focus:outline-none">
+                        Regular Price
+                    </button>
+                    <button id="toggle-annual" class="px-5 py-2 text-xs font-semibold rounded-full text-zinc-500 hover:text-black transition-all focus:outline-none flex items-center space-x-1.5">
+                        <span>Yearly contract</span>
+                        <span class="bg-[#a3ff33] text-black text-[9px] font-bold px-1.5 py-0.5 rounded-full">-20%</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+                
+                <!-- Package 1: The Spark MVP -->
+                <div class="bg-[#fafafa] rounded-3xl p-8 border border-zinc-100 flex flex-col justify-between hover:border-zinc-300 transition-all duration-300 relative">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="font-extrabold text-xl mb-1 text-brand-dark">The MVP Spark</h3>
+                                <p class="text-xs text-zinc-400">Great for validated ideas needing speed</p>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <span class="text-display text-4xl font-extrabold text-brand-dark" id="price-spark">$4,900</span>
+                            <span class="text-zinc-400 text-sm">/one-off</span>
+                        </div>
+                        <p class="text-zinc-500 text-sm mb-8 leading-relaxed">We focus on building a lean, functional product to kickstart validation metrics.</p>
+                        
+                        <!-- Features list -->
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center text-sm text-zinc-600">
+                                <svg class="w-5 h-5 text-zinc-700 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Custom design & wireframe (up to 3 screens)
+                            </li>
+                            <li class="flex items-center text-sm text-zinc-600">
+                                <svg class="w-5 h-5 text-zinc-700 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                3 core business features
+                            </li>
+                            <li class="flex items-center text-sm text-zinc-600">
+                                <svg class="w-5 h-5 text-zinc-700 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Stripe payments integration
+                            </li>
+                            <li class="flex items-center text-sm text-zinc-600">
+                                <svg class="w-5 h-5 text-zinc-700 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                30 days of post-launch maintenance
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="cta-book-btn w-full py-4 px-6 border border-zinc-200 hover:border-black rounded-2xl font-bold text-sm bg-white hover:bg-zinc-50 transition-all">
+                        Book discovery call
+                    </button>
+                </div>
+
+                <!-- Package 2: The Premium Scale (Matches image highlight aesthetics) -->
+                <div class="bg-black text-white rounded-3xl p-8 flex flex-col justify-between hover:scale-[1.02] transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-[#a3ff33] text-black font-extrabold text-[10px] uppercase tracking-wider py-1.5 px-6 rounded-bl-2xl">
+                        Most Popular
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="font-extrabold text-xl mb-1 text-white">The Scale MVP</h3>
+                                <p class="text-xs text-zinc-400">For ambitious ventures needing custom infrastructure</p>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <span class="text-display text-4xl font-extrabold text-white" id="price-scale">$8,900</span>
+                            <span class="text-zinc-400 text-sm">/one-off</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm mb-8 leading-relaxed">Full-fledged SaaS foundation including complex roles, multi-tenancy, and customized integrations.</p>
+                        
+                        <!-- Features list -->
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center text-sm text-zinc-300">
+                                <svg class="w-5 h-5 text-[#a3ff33] mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Complete premium UX interface (up to 8 screens)
+                            </li>
+                            <li class="flex items-center text-sm text-zinc-300">
+                                <svg class="w-5 h-5 text-[#a3ff33] mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Unlimited backend database features
+                            </li>
+                            <li class="flex items-center text-sm text-zinc-300">
+                                <svg class="w-5 h-5 text-[#a3ff33] mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Multi-tenant workspace or user roles
+                            </li>
+                            <li class="flex items-center text-sm text-zinc-300">
+                                <svg class="w-5 h-5 text-[#a3ff33] mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                90 days of dedicated maintenance
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="cta-book-btn w-full py-4 px-6 bg-[#a3ff33] hover:bg-[#92eb27] text-black rounded-2xl font-extrabold text-sm transition-all shadow-md shadow-brand-lime/15">
+                        Start your project
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-24 bg-[#fafafa]">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-wider text-zinc-400 font-semibold bg-zinc-100 px-3 py-1 rounded-full">Got questions?</span>
+                <h2 class="text-display text-3xl md:text-4xl font-extrabold tracking-tight mt-3 mb-4">Frequently Asked Questions</h2>
+                <p class="text-zinc-500">Everything you need to know about our streamlined MVP production pipeline.</p>
+            </div>
+
+            <!-- Accordion items -->
+            <div class="space-y-4">
+                
+                <!-- Q1 -->
+                <div class="border border-zinc-200 bg-white rounded-2xl overflow-hidden transition-all duration-300">
+                    <button class="faq-toggle w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-bold text-base text-brand-dark">How fast can you build my MVP?</span>
+                        <span class="faq-icon transform transition-transform duration-300 text-zinc-400">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="px-6 pb-5 text-sm text-zinc-500 leading-relaxed border-t border-zinc-100/50 pt-3">
+                            On average, our core mvp builds take between 4 to 6 weeks depending on complexity. We align design drafts in week 1, assemble infrastructure by week 3, complete deep QA testing in week 5, and coordinate launching sequence inside the final week.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="border border-zinc-200 bg-white rounded-2xl overflow-hidden transition-all duration-300">
+                    <button class="faq-toggle w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-bold text-base text-brand-dark">Who actually owns the intellectual property?</span>
+                        <span class="faq-icon transform transition-transform duration-300 text-zinc-400">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="px-6 pb-5 text-sm text-zinc-500 leading-relaxed border-t border-zinc-100/50 pt-3">
+                            You do! 100%. Once final contractual invoicing milestones are met, full legal intellectual property ownership rights, codebase databases, configuration and Figma source design assets get instantly signed over to you or your company.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="border border-zinc-200 bg-white rounded-2xl overflow-hidden transition-all duration-300">
+                    <button class="faq-toggle w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-bold text-base text-brand-dark">What technologies do you build on?</span>
+                        <span class="faq-icon transform transition-transform duration-300 text-zinc-400">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="px-6 pb-5 text-sm text-zinc-500 leading-relaxed border-t border-zinc-100/50 pt-3">
+                            We use standard, highly stable modern stacks. Our modern toolkit primarily features React, Next.js, Tailwind CSS on the frontend, and Node.js or PostgreSQL with Supabase on the back-end side. We write pristine, highly documented typescript codebases.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="border border-zinc-200 bg-white rounded-2xl overflow-hidden transition-all duration-300">
+                    <button class="faq-toggle w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-bold text-base text-brand-dark">Do you offer post-launch support?</span>
+                        <span class="faq-icon transform transition-transform duration-300 text-zinc-400">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="px-6 pb-5 text-sm text-zinc-500 leading-relaxed border-t border-zinc-100/50 pt-3">
+                            Yes, absolutely. Every package comes with free dedicated maintenance and patching window guarantees. If you require continuous scaling feature iterations, we offer transparent ongoing monthly sprints retainer models.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-white border-t border-zinc-100 py-12 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            
+            <div class="flex items-center space-x-2 mb-6 md:mb-0">
+                <svg class="w-6 h-6 text-black" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="15" />
+                    <path d="M50 20 C 65 20, 80 35, 80 50 C 80 65, 65 80, 50 80 C 40 80, 30 75, 20 65" stroke="currentColor" stroke-width="15" stroke-linecap="round"/>
+                </svg>
+                <span class="font-extrabold text-sm tracking-tight">SaaS MVP Studio</span>
+            </div>
+
+            <p class="text-xs text-zinc-400 text-center md:text-right">
+                &copy; 2026 SaaS MVP Studio. All rights reserved. Replica based on image_3a3124.png.
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE LEAD GENERATION MODAL -->
+    <div id="booking-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-3xl max-w-md w-full p-8 m-4 relative shadow-2xl transform scale-95 transition-transform duration-300">
+            <!-- Close Button -->
+            <button id="close-modal-btn" class="absolute top-6 right-6 p-1 text-zinc-400 hover:text-black rounded-full hover:bg-zinc-100 transition-all">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <h3 class="text-display text-2xl font-extrabold tracking-tight mb-2">Build your SaaS MVP</h3>
+            <p class="text-zinc-500 text-sm mb-6">Tell us a bit about your product idea and let's coordinate a launch strategy call.</p>
+
+            <form id="booking-form" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">Name</label>
+                    <input type="text" required placeholder="Jane Doe" class="w-full px-4 py-3 border border-zinc-200 rounded-xl focus:border-black focus:outline-none transition-colors text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">Email Address</label>
+                    <input type="email" required placeholder="jane@company.com" class="w-full px-4 py-3 border border-zinc-200 rounded-xl focus:border-black focus:outline-none transition-colors text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">What are you building?</label>
+                    <textarea rows="3" required placeholder="AI analytics platform for SaaS teams..." class="w-full px-4 py-3 border border-zinc-200 rounded-xl focus:border-black focus:outline-none transition-colors text-sm resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 bg-[#a3ff33] text-black font-extrabold rounded-2xl hover:bg-[#92eb27] transition-all text-sm mt-2">
+                    Submit Proposal Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Custom UI Alert Notification banner -->
+    <div id="custom-toast" class="fixed bottom-6 right-6 bg-black text-white px-6 py-4 rounded-2xl shadow-2xl z-50 flex items-center space-x-3 hidden transform translate-y-12 opacity-0 transition-all duration-300">
+        <span class="w-2 h-2 bg-[#a3ff33] rounded-full animate-ping"></span>
+        <span class="text-sm font-medium" id="toast-message">Your request has been registered!</span>
+    </div>
+
+    <!-- INTERACTIVE JAVASCRIPT ACTIONS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Mobile Dropdown Navigation ---
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+
+            mobileBtn.addEventListener('click', () => {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>`;
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>`;
+                }
+            });
+
+            // Close mobile menu on anchor click
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>`;
+                });
+            });
+
+
+            // --- Interactive Case Study Filters ---
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active styles
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-black', 'text-white');
+                        b.classList.add('bg-white', 'text-zinc-600', 'border', 'border-zinc-200');
+                    });
+                    btn.classList.add('bg-black', 'text-white');
+                    btn.classList.remove('bg-white', 'text-zinc-600', 'border-zinc-200');
+
+                    // Filter core elements
+                    const category = btn.id.replace('filter-', '');
+                    projectCards.forEach(card => {
+                        if (category === 'all') {
+                            card.style.display = 'block';
+                            setTimeout(() => card.style.opacity = '1', 50);
+                        } else {
+                            if (card.dataset.category === category) {
+                                card.style.display = 'block';
+                                setTimeout(() => card.style.opacity = '1', 50);
+                            } else {
+                                card.style.opacity = '0';
+                                setTimeout(() => card.style.display = 'none', 300);
+                            }
+                        }
+                    });
+                });
+            });
+
+
+            // --- Interactive Price Toggle Animation ---
+            const monthlyBtn = document.getElementById('toggle-monthly');
+            const annualBtn = document.getElementById('toggle-annual');
+            const sparkPrice = document.getElementById('price-spark');
+            const scalePrice = document.getElementById('price-scale');
+
+            annualBtn.addEventListener('click', () => {
+                monthlyBtn.classList.remove('bg-white', 'text-black', 'shadow-sm');
+                monthlyBtn.classList.add('text-zinc-500');
+                annualBtn.classList.add('bg-white', 'text-black', 'shadow-sm');
+                annualBtn.classList.remove('text-zinc-500');
+
+                // Animate numeric text transition
+                sparkPrice.style.opacity = '0';
+                scalePrice.style.opacity = '0';
+                setTimeout(() => {
+                    sparkPrice.textContent = '$3,920';
+                    scalePrice.textContent = '$7,120';
+                    sparkPrice.style.opacity = '1';
+                    scalePrice.style.opacity = '1';
+                }, 150);
+            });
+
+            monthlyBtn.addEventListener('click', () => {
+                annualBtn.classList.remove('bg-white', 'text-black', 'shadow-sm');
+                annualBtn.classList.add('text-zinc-500');
+                monthlyBtn.classList.add('bg-white', 'text-black', 'shadow-sm');
+                monthlyBtn.classList.remove('text-zinc-500');
+
+                sparkPrice.style.opacity = '0';
+                scalePrice.style.opacity = '0';
+                setTimeout(() => {
+                    sparkPrice.textContent = '$4,900';
+                    scalePrice.textContent = '$8,900';
+                    sparkPrice.style.opacity = '1';
+                    scalePrice.style.opacity = '1';
+                }, 150);
+            });
+
+
+            // --- Custom Accordion Actions (FAQ Panel) ---
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                    
+                    // Close all FAQs
+                    faqToggles.forEach(t => {
+                        t.setAttribute('aria-expanded', 'false');
+                        t.nextElementSibling.style.maxHeight = '0';
+                        t.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                    });
+
+                    // Toggle selected FAQ
+                    if (!expanded) {
+                        toggle.setAttribute('aria-expanded', 'true');
+                        const content = toggle.nextElementSibling;
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        toggle.querySelector('.faq-icon').style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+
+            // --- Booking Modal Actions ---
+            const modal = document.getElementById('booking-modal');
+            const openModalBtns = document.querySelectorAll('.cta-book-btn');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const bookingForm = document.getElementById('booking-form');
+            const toast = document.getElementById('custom-toast');
+            const toastMessage = document.getElementById('toast-message');
+
+            const openModal = () => {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modal.querySelector('.transform').classList.remove('scale-95');
+                }, 50);
+            };
+
+            const closeModal = () => {
+                modal.classList.add('opacity-0');
+                modal.querySelector('.transform').classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            };
+
+            openModalBtns.forEach(btn => btn.addEventListener('click', openModal));
+            closeModalBtn.addEventListener('click', closeModal);
+
+            // Close modal when clicking dark overlay background
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            // Handle Lead Registration Form
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                closeModal();
+                
+                // Show Custom Interactive Toast Notification
+                toast.classList.remove('hidden');
+                setTimeout(() => {
+                    toast.classList.remove('translate-y-12', 'opacity-0');
+                }, 100);
+
+                setTimeout(() => {
+                    toast.classList.add('translate-y-12', 'opacity-0');
+                    setTimeout(() => toast.classList.add('hidden'), 300);
+                }, 4000);
+
+                bookingForm.reset();
+            });
+
+        });
+    </script>
+</body>
+</html>
